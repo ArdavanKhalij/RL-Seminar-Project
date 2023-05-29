@@ -49,8 +49,8 @@ scores2 = []
 scores1 = sp.simple_population(N, env, policy, episode_count_for_simple_population, perturbation_scale, num_episodes)
 scores2 = zo.Zeroth_order(policy, env, learning_rate, perturbation_scale, episode_count_for_simple_population, num_episodes)
 
-s.save_list_to_file(scores1, "learning_curve_simple_population_2_episodes.txt")
-s.save_list_to_file(scores2, "learning_curve_zeroth_order_2_episodes.txt")
+s.save_list_to_file(scores1, "Data Path Text File of Simple Population")
+s.save_list_to_file(scores2, "Data Path Text File of Zeroth Order")
 
 # scores1 = s.read_list_from_file("learning_curve_simple_population_2_episodes.txt")
 # scores2 = s.read_list_from_file("learning_curve_zeroth_order_2_episodes.txt")
