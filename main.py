@@ -36,8 +36,6 @@ episode_count_for_simple_population = 2
 
 learning_rate = 0.001
 
-perturbation_scale = 1
-
 num_episodes = 1000
 
 # Policy
@@ -46,8 +44,8 @@ policy = pnn.Policy(state_size, hidden_size, action_size)
 scores1 = []
 scores2 = []
 
-scores1 = sp.simple_population(N, env, policy, episode_count_for_simple_population, perturbation_scale, num_episodes)
-scores2 = zo.Zeroth_order(policy, env, learning_rate, perturbation_scale, episode_count_for_simple_population, num_episodes)
+scores1 = sp.simple_population(N, env, policy, episode_count_for_simple_population, num_episodes)
+scores2 = zo.Zeroth_order(policy, env, learning_rate, episode_count_for_simple_population, num_episodes)
 
 s.save_list_to_file(scores1, "Data Path Text File of Simple Population")
 s.save_list_to_file(scores2, "Data Path Text File of Zeroth Order")
