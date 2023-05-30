@@ -9,7 +9,7 @@ import torch
 #######################################################################################################################
 # 3. Implement the simple Population Method described above to learn a policy in LunarLanderContinuous.
 #######################################################################################################################
-def simple_population(N, env, policy, episode_count, perturbation_scale, generation):
+def simple_population(N, env, policy, episode_count, generation):
     List_of_scores = []
     # Best score set -inf at the start, so we can detect all possible scores
     best_score = float("-inf")
@@ -30,7 +30,7 @@ def simple_population(N, env, policy, episode_count, perturbation_scale, generat
             for name, param in policy_x.named_parameters():
                 # Generate random noise with the same shape as the parameter
                 noise = torch.randn_like(param)
-                perturbed_params[name] = param + (perturbation_scale * noise)
+                perturbed_params[name] = param + noise
 
             # Update the policy with perturbed parameters
             policy_x.load_state_dict(perturbed_params)
