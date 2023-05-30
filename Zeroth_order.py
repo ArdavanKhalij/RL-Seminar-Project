@@ -32,7 +32,7 @@ def set_parameters(new_parameters, policy):
         param.data = new_param
     return policy
 
-def Zeroth_order(policy, env, learning_rate, perturbation_scale, num_episodes, num_iterations):
+def Zeroth_order(policy, env, learning_rate, num_episodes, num_iterations):
     results = []
     Best_score = float("-inf")
     for i in range(num_iterations):
