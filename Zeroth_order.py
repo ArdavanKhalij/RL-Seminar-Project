@@ -36,22 +36,22 @@ def Zeroth_order(policy, env, learning_rate, num_episodes, num_iterations):
     results = []
     Best_score = float("-inf")
     for i in range(num_iterations):
-        # Step 1: Produce perturbation vector
+        # Produce perturbation vector
         parameters = get_parameters(policy)
         perturbation = produce_perturbation(parameters)
 
-        # Step 2: Produce perturbations of θ
+        # Produce perturbations of θ
         theta_plus = add_list(parameters, perturbation)
         theta_minus = diff_list(parameters, perturbation)
 
-        # Step 3: Evaluate perturbations
+        # Evaluate perturbations
         score_plus = evaluate_policy(env, policy, theta_plus, num_episodes)
         score_minus = evaluate_policy(env, policy, theta_minus, num_episodes)
 
-        # Step 4: Compute gradient
+        # Compute gradient
         gradient = 0.5 * (score_plus - score_minus) * np.array(perturbation)
 
-        # Step 5: Update θ
+        # Update θ
         updated_params = add_list(parameters, learning_rate * gradient)
         policy = set_parameters(updated_params, policy)
         result = evaluate_policy(env, policy, updated_params, num_episodes)
