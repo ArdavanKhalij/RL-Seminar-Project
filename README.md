@@ -1,5 +1,7 @@
 # RL-Seminar
 The Fundamental project focuses on the Agent side of a Reinforcement Learning setting. In this project, you have to implement a Reinforcement Learning agent.
+## License
+This project is licensed under the terms of the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](./LICENSE).
 ## Policy Optimization
 The objective of Reinforcement Learning is to compute a policy π that maximizes the expected discounted return it obtains: π maximizes the expected (over episodes) sum (over time-steps) of γt rt, with rt the reward obtained at time t.</br>
 Approaches such as Policy Gradient, seen during the lectures, consider that the policy π is parametric. The action it produces depends on the state and some learnable parameters, such as the weights of a neural network. Policy Gradient finds the parameters that maximize the Policy Gradient objective, Rt log π(at | st). This is the sum of rewards obtained from time-step t to the end of the episode, times the probability that the policy associates with the action at in st.</br>
